@@ -15,6 +15,38 @@ const config = {
 
   firebase.initializeApp(config);
 
+  //Make an API request to our firestore to see if there's the user object that we created based on userAuth, if not, we create one.
+  export const createUserProfileDocument = async (userAuth, additionalData) => {
+    //If the user auth object does not exist (user sign out) then return null
+    if (!userAuth) return;
+
+    //referenceObject represents the current place of the object in our database (firestore)
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
+    //snapshotObject represents the data. We get the snapshotObject from the referenceObject using .get() method.
+    const snapShot = await userRef.get();
+    
+    //If the user auth object exists (user sign in) but the database doesn't have the data, then create a user object in our database (firestore) based on that user auth object
+    if(!snapShot.exists) {
+      const { displayName, email } = userAuth;
+      const createdAt = new Date();
+
+      try {
+        //Use .set to create a new user object using the data from our auth object
+        await userRef.set({
+          displayName,
+          email,
+          createdAt,
+          ...additionalData
+        })
+      } catch (error) {
+        console.log('error creating user', error.message);
+      }
+    }
+
+    //Return the referenceObject with our new created data (snapshotObject) inside.
+    return userRef;
+  }
+
   export const auth = firebase.auth();
   export const firestore = firebase.firestore();
 
