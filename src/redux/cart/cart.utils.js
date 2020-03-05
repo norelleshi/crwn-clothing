@@ -1,3 +1,4 @@
+//Add a functionality to group items in cart reducer (add the quantity property to cartItem)
 export const addItemToCart = (cartItems, cartItemToAdd) => {
     /** 
     Look inside of our existing cart items to see if that cart item already exists.
