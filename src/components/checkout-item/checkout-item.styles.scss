@@ -23,7 +23,20 @@
     }
   
     .quantity {
-      padding-left: 20px;
+      display: flex;
+
+      .decrease,
+      .increase {
+        cursor: pointer;
+        padding: 0 5px;
+        border: 1px solid lightgray;
+      }
+
+      .value {
+        padding: 0 15px;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+      }
     }
   
     .remove-button {
