@@ -6,6 +6,8 @@ import storage from 'redux-persist/lib/storage';
 
 import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer';
+import directoryReducer from './directory/directory.reducer';
+import shopReducer from './shop/shop.reducer';
 
 //Persist cart reducer to storage
 const persistConfig = {
@@ -16,7 +18,9 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     user: userReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    directory: directoryReducer,
+    shop: shopReducer
 })
 
 //Use persistReducer function to turn the rootReducer into a persistent version of rootReducer and export out
