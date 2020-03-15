@@ -25,6 +25,10 @@
       position: absolute;
       top: 255px;
       display: none;
+
+      @media screen and (max-width: 1200px) { 
+        display: flex;
+      }
     }
 
     &:hover {
