@@ -1,7 +1,11 @@
 .sign-up {
     display: flex;
     flex-direction: column;
-    width: 380px;
+    width: 400px;
+
+    @media screen and (max-width: 600px) { 
+        width: 95%;
+    }
 
     .title {
         margin: 10px 0;

@@ -24,6 +24,10 @@
 
     &.large {
       height: 380px;
+
+      @media screen and (max-width: 900px) { 
+        height: 240px;
+    }
     }
   
     &:first-child {
@@ -52,17 +56,30 @@
       background-color: white;
       opacity: 0.7;
       position: absolute;
+
+      @media screen and (max-width: 600px) { 
+        padding: 0 10px;
+        width: 105px;
+      }
   
       .title {
         font-weight: bold;
         margin-bottom: 6px;
         font-size: 22px;
         color: #4a4a4a;
+
+        @media screen and (max-width: 600px) { 
+          font-size: 17px !important;
+        }
       }
   
       .subtitle {
         font-weight: lighter;
         font-size: 16px;
+
+        @media screen and (max-width: 600px) { 
+          font-size: 10px !important;
+        }
       }
     }
   }
