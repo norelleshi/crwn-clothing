@@ -6,6 +6,10 @@
   
     img {
       width: 30%;
+
+      @media screen and (max-width: 600px) { 
+        height: 80px;
+      }
     }
   
     .item-details {
