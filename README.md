@@ -1,7 +1,7 @@
 # CRWN Clothing Introduction
 This project is built following the course 'Complete React Developer in 2020' by Andrei Neagoie and Yihua Zhang, including my own changes.
 
-## This is the project structure I made
+## This is the project structure demonstration
 ![construction](/src/assets/structure.png)
 
 ## Features, Tools and Technologies
